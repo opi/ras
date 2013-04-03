@@ -1,0 +1,59 @@
+body{
+  font: 0.8em sans-serif;
+  line-height: 1.5;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+#container{
+  width: 980px; 
+  margin: auto;
+}
+
+ul, li{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+.red{
+  background:orange;
+}
+.blue{
+  background:aqua;
+}
+.green{
+  background:green;
+}
+.grey{
+  background:grey;
+}
+.yellow{
+  background:yellow;
+}
+.purple{
+  background:purple;
+}
+.pink{
+  background:pink;
+}
+
+#RASContainer{
+  background: DarkSlateGray ;
+  margin: 1em 0;
+}
+
+.btnSlideRAS{
+  background: grey;
+  color: #FFF;
+  display: inline-block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.btnSlideRAS:hover{
+  background-color: #FFF;
+  color: grey;
+}
