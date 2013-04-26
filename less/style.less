@@ -1,0 +1,56 @@
+@import "perso-mix.less";
+@import "mixins.less";
+
+body {
+  .Arial;
+  .bg(#EEE);
+  font-size: 0.88em;
+  line-height: 1.4;
+}
+
+h1 {
+  .NotoBold;
+  text-shadow: 1px 1px 1px #FFF;
+  font-size: 3em;
+  color: #222;
+  text-align: center;
+}
+
+ul { padding: 0; margin: 0; }
+
+ul li { list-style: none; margin: 0; padding: 0; }
+
+/* ==========================================================================
+   SlideShow
+   ========================================================================== */
+
+#AllRASContainer {
+  width: 57.14em;
+  margin: auto;
+  padding: 0.5em 0.4em 0.2em 0.5em;
+  .bg(#FFF);
+  .rounded(4px);
+  .posR;
+  li { text-align: center; }
+}
+
+#navRAS {
+  button {
+    .posA;
+    top: 50%;
+    margin-top: -1.5em;
+    .bg(#000);
+    border: 0;
+    color: #FFF;
+    font-size: 2em;
+    height: 2em;
+    width: 1em;
+    cursor: pointer;
+    &:hover, &:focus {
+      .bg(#FFF);
+      color: #000;
+    }
+  }
+  .prev { left: -1em; .border-radius(0, 0, 90px, 90px); }
+  .next { right: -1em; .border-radius(90px, 90px, 0, 0); }
+}

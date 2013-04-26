@@ -1,0 +1,155 @@
+/*General function*/
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+}
+
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.rotation(@deg:5deg){
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+/*Shadow*/
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.box-inner-shadow(@arguments) {
+  -webkit-box-shadow:inset @arguments;
+  -moz-box-shadow:inset @arguments;
+  box-shadow:inset @arguments;
+}
+
+/*========
+
+ = Box Sizing
+
+========*/
+
+.boxSizing{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+/*Column*/
+
+.column(@nbre, @dist){
+	-moz-column-count: @nbre;
+	-webkit-column-count: @nbre;
+	-o-column-count: @nbre;
+	column-count: @nbre;
+	-moz-column-gap: @dist;
+	-webkit-column-gap: @dist;
+	-o-column-gap: @dist;
+	column-gap: @dist;
+}
+
+/*Gradient*/
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               from(@start),
+                               to(@stop));
+  background: -webkit-linear-gradient(top, @stop, @start);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(top, @stop, @start);                            
+  
+}
+
+/*Horizontal Gradient*/
+
+.horizontalGradient(@color:#F5F5F5, @start: #EEE, @stop: #FFF){
+    background: @color; /* Old browsers */
+    background: -moz-linear-gradient(left,  @start 0%, @stop 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  @start 0%,@stop 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  @start 0%,@stop 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  @start 0%,@stop 100%); /* IE10+ */
+    background: linear-gradient(to right,  @start 0%,@stop 100%); /* W3C */
+}
+
+/*Transition*/
+
+.transition(@effect:all, @duration:0.2s, @ease:ease-out) {
+  -webkit-transition: @effect @duration @ease;
+  -moz-transition: @effect @duration @ease;
+  transition: @effect @duration @ease;
+}
+
+/*Transfom*/
+
+.scale(@ratio:1.5){
+	-webkit-transform:scale(@ratio);
+ 	-moz-transform:scale(@ratio);
+	transform:scale(@ratio);
+}
+
+.transform(@argument){
+  -webkit-transform: @argument;
+  -moz-transform: @argument;
+  -ms-transform: @argument;
+  -o-transform: @argument;
+  transform: @argument; 
+}
+
+.size(@w:5px, @h:5px){
+	width: @w;
+	height: @h;
+}
+
+.square(@s:5px){
+	.size(@s, @s);
+}
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+      content: "";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
