@@ -20,18 +20,23 @@ ul { padding: 0; margin: 0; }
 
 ul li { list-style: none; margin: 0; padding: 0; }
 
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;/*BUG IE8*/
+}
+
 /* ==========================================================================
    SlideShow
    ========================================================================== */
 
 #AllRASContainer {
-  width: 57.14em;
+  width: 56%;
   margin: auto;
   padding: 0.5em 0.4em 0.2em 0.5em;
   .bg(#FFF);
   .rounded(4px);
   .posR;
-  li { text-align: center; }
 }
 
 #navRAS {
@@ -46,6 +51,7 @@ ul li { list-style: none; margin: 0; padding: 0; }
     height: 2em;
     width: 1em;
     cursor: pointer;
+    padding: 0.3em 0 0.5em;
     &:hover, &:focus {
       .bg(#FFF);
       color: #000;
