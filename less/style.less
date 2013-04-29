@@ -3,7 +3,7 @@
 
 body {
   .Arial;
-  .bg(#EEE);
+  .bg(#ecf0f1);
   font-size: 0.88em;
   line-height: 1.4;
 }
@@ -12,8 +12,15 @@ h1 {
   .NotoBold;
   text-shadow: 1px 1px 1px #FFF;
   font-size: 3em;
-  color: #222;
+  color: #2c3e50;
   text-align: center;
+}
+
+h2 {
+  .NotoBold;
+  color: #2c3e50;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px #FFF;
 }
 
 ul { padding: 0; margin: 0; }
@@ -26,13 +33,26 @@ img {
   width: auto;/*BUG IE8*/
 }
 
+pre {
+  .bg(rgba(22, 160, 133, 0.8));
+  .rounded(4px);
+  color: #FFF;
+  padding: 1em 1.5em;
+  font-size: 1.2em;
+  margin: 1em 0 0;
+  /*white-space: normal;*/
+}
+
+#wrapper {
+  width: 56%;
+  margin: auto;
+}
+
 /* ==========================================================================
    SlideShow
    ========================================================================== */
 
 #AllRASContainer {
-  width: 56%;
-  margin: auto;
   padding: 0.5em 0.4em 0.2em 0.5em;
   .bg(#FFF);
   .rounded(4px);
@@ -44,7 +64,7 @@ img {
     .posA;
     top: 50%;
     margin-top: -1.5em;
-    .bg(#000);
+    .bg(#2c3e50);
     border: 0;
     color: #FFF;
     font-size: 2em;
@@ -54,7 +74,7 @@ img {
     padding: 0.3em 0 0.5em;
     &:hover, &:focus {
       .bg(#FFF);
-      color: #000;
+      color: #2c3e50;
     }
   }
   .prev { left: -1em; .border-radius(0, 0, 90px, 90px); }

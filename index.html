@@ -12,12 +12,21 @@
 
 </head>
 <body>
-  <h1>R.A.S. : Responsive Accessible Slideshow</h1>
-  <ul id="slideshow">
-    <li><img src="img/500.jpeg" alt="image de chaton tout mignon" /></li>
-    <li><img src="img/500chat.jpg" alt="une autre image de chaton tout mignon" /></li>
-    <li><img src="img/500chat2.jpg" alt="désolé c'est encore un chaton" /></li>
-  </ul>
+  <div id="wrapper">
+    <h1>R.A.S. : Responsive Accessible Slideshow</h1>
+    <ul id="slideshow">
+      <li><img src="img/500.jpeg" alt="image de chaton tout mignon" /></li>
+      <li><img src="img/500chat.jpg" alt="une autre image de chaton tout mignon" /></li>
+      <li><img src="img/500chat2.jpg" alt="désolé c'est encore un chaton" /></li>
+    </ul>
+    <h2>Comment installer RAS ?</h2>
+    <pre>&lt;script src="ras.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $.fn.ready(function(){
+    $('#slideshow').RAS();
+  });
+&lt;/script&gt;</pre>
+  </div>
   <!-- 
   <ul>
     <li><a href="testcarousel">Test Carousel with 1 element visible responsive</a></li>
