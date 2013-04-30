@@ -1,5 +1,5 @@
 $.fn.ready(function(){
-  $("#slideshow").RAS({
+  $("#slideshow").ras({
     textPrev:'‹',
     textNext:'›'
   });
