@@ -74,7 +74,7 @@
               'width':childsWidth*childLength
             }).attr('data-width',childsWidth);
           
-          $(window).load(function(){
+          $('img').load(function(){
             self.heightElement(childs, elementRAS);
             elementRAS.css({
               'width':docWidth*childLength
@@ -82,8 +82,10 @@
             childs.css({
               'width':docWidth,
               'position':'relative'
-            })
+            });
           });
+          
+          
           
           //Evenement navigation
           $navRAS.find('.prev').bind('click', function(){
@@ -98,6 +100,12 @@
                 anim = options.animation;
                 
             self.slide($RASSlideshow, 'next', time, 'null');
+          });
+          
+          //if User resize window
+          $(window).resize(function(){
+            var docWidth = $elementParent.width();
+            self.resizeMe(elementRAS, docWidth);
           });
         }
       },
@@ -139,6 +147,22 @@
         //Attribute heigth element and Container
         parentElement.height(h);
         parentElement.parent().height(h).attr('data-height', h);
+      },
+      //Resize Method
+      resizeMe: function(element, valueScreen) {
+        var childs = element.children(),
+            childLength = childs.length
+        
+        var docWidth = valueScreen,
+            childsWidth = docWidth;
+        element.css({
+          'width':childsWidth*childLength
+        }).attr('data-width',childsWidth);
+        childs.css({
+          'width':childsWidth,
+          'position':'relative'
+        });
+        this.heightElement(childs, element);
       }
     }
 
