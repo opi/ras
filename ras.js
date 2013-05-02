@@ -19,11 +19,9 @@
         this.element = element;
         var self = this,
             $element = $(self.element),
-            childs = $element.children(),
-            childLength = childs.length,
-            $elementParent = $element.parent(),
             id = element.id,
-            classRas = element.className,
+            classRas = element.className.split(' '),
+            classRas = classRas[0],
             identiant;
             (id ? identiant = id : identiant = classRas )
             
