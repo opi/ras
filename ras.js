@@ -25,7 +25,7 @@
             identiant;
             (id ? identiant = id : identiant = classRas )
             
-            $element.wrap('<div id="AllRAS-'+identiant+'"/>')
+            $element.wrap('<div class="allRas" id="AllRAS-'+identiant+'"/>')
         
         self.init(options, identiant);
         
@@ -44,7 +44,7 @@
             navigation = '<div id="navRAS"><button class="btnSlideRAS prev">'+options.textPrev+'</button><button class="btnSlideRAS next">'+options.textNext+'</button></div>',
             childLength = childs.length,
             $elementParent = $element.parent();
-            $element.wrap('<div id="RASContainer-'+id+'" style="width:100%; overflow:hidden;"/>'),
+            $element.wrap('<div class="rasContainer" id="RASContainer-'+id+'" style="width:100%; overflow:hidden;"/>'),
             $RASContainer = $element.parent();
         
         if(childLength > 1){
