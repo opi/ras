@@ -57,7 +57,7 @@
       }
       
       $(window).resize(function(){
-        var valueScreen = $(window).width();
+        var valueScreen = slideshow.closest('.allRas');
         
         function changeValue(value){
           childs.css({
