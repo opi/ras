@@ -104,8 +104,8 @@
           
           //if User resize window
           $(window).resize(function(){
-            var docWidth = $elementParent.width();
-            self.resizeMe(elementRAS, docWidth);
+            var docWidth = $(window).width();
+            self.resizeMe(elementRAS, docWidth, childLength);
           });
         }
       },
@@ -149,17 +149,16 @@
         parentElement.parent().height(h).attr('data-height', h);
       },
       //Resize Method
-      resizeMe: function(element, valueScreen) {
-        var childs = element.children(),
-            childLength = childs.length
+      resizeMe: function(element, valueScreen, childLength) {
+        var childs = element.children();
         
         var docWidth = valueScreen,
             childsWidth = docWidth;
         element.css({
-          'width':childsWidth*childLength
-        }).attr('data-width',childsWidth);
+          'width':valueScreen*childLength
+        }).attr('data-width',valueScreen);
         childs.css({
-          'width':childsWidth,
+          'width':valueScreen,
           'position':'relative'
         });
         this.heightElement(childs, element);

@@ -22,14 +22,14 @@
           oneVisible = options.oneVisible,
           elementRAS = $(self.element);
           
-      //If oneVisible is false  
-      $('img').load(function(){
-        childs.css({
-          'width':100/countElement + '%'
-        })
-      });
       
       if(childsLength > countElement && !oneVisible){
+        //If oneVisible is false  
+        $('img').load(function(){
+          childs.css({
+            'width':100/countElement + '%'
+          })
+        });
         for(var i = 0; i < childs.length; i=i+countElement) {
           childs
             .slice(i, i+countElement)
@@ -53,24 +53,27 @@
             'white-space':'nowrap'
           }).attr('data-width',widthElement);
         });
+        
       }
       
       $(window).resize(function(){
         var valueScreen = $(window).width();
         
         function changeValue(value){
-          slideshow.css({
-            'width':value
-          }).attr('data-width',value);
           childs.css({
             'width':value,
             'position':'relative'
-          }); 
+          });
         }
-        if(docWidth/countElement > valueScreen){
-          changeValue(valueScreen);
-        }else{
-          changeValue(docWidth/countElement); 
+        if(oneVisible){
+          changeValue(widthElement);
+          slideshow.attr('data-width',widthElement);
+          if(valueScreen < widthElement) {
+            changeValue(valueScreen);
+            slideshow.attr('data-width',valueScreen);
+          }
+        }else {
+          changeValue(100/countElement + '%');
         }
       });
       

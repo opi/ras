@@ -5,7 +5,6 @@
   
   r.autoslide = {
     options : {
-      play:true,
       time:2000,
       textPlay:'play',
       textPause:'pause'
