@@ -88,3 +88,27 @@ pre {
   .prev { left: -1em; .border-radius(0, 0, 90px, 90px); }
   .next { right: -1em; .border-radius(90px, 90px, 0, 0); }
 }
+
+/* ==========================================================================
+   Container BTN
+   ========================================================================== */
+   
+.container-btn {
+  text-align: center;
+  margin-bottom: 1.5em;
+  a {
+    .bg(#2c3e50);
+    .inline-block;
+    .tnone;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    margin-left: 1em;
+    color: #FFF;
+    .rounded(2px);
+    .NotoBold;
+    &:hover, &:focus {
+      .bg(#FFF);
+      color: #2c3e50;
+    }
+  }
+}
