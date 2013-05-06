@@ -104,7 +104,7 @@
           
           //if User resize window
           $(window).resize(function(){
-            var docWidth = $(window).width();
+            var docWidth = RASparent.width();
             self.resizeMe(elementRAS, docWidth, childLength);
           });
         }

@@ -24,17 +24,18 @@
           
       
       if(childsLength > countElement && !oneVisible){
-        //If oneVisible is false  
-        $('img').load(function(){
-          childs.css({
-            'width':100/countElement + '%'
-          })
-        });
         for(var i = 0; i < childs.length; i=i+countElement) {
           childs
             .slice(i, i+countElement)
             .wrapAll('<div class="slide" style="float:left; width:'+docWidth+'px;"/>');
         }
+        //If oneVisible is false  
+        $('img').load(function(){
+          childs.css({
+            'width':100/countElement + '%'
+          });
+        });
+        
       }else{
         var widthElement;
         ($(window).width() > 400 ? widthElement = docWidth/countElement : widthElement = $(window).width());
@@ -47,7 +48,7 @@
               'display':'inline-block',
               'white-space':'normal',
               'vertical-align':'top'
-            })
+            });
           slideshow.css({
             'width':'100%', 
             'white-space':'nowrap'
@@ -57,7 +58,7 @@
       }
       
       $(window).resize(function(){
-        var valueScreen = slideshow.closest('.allRas');
+        var valueScreen = slideshow.closest('.allRas').width();
         
         function changeValue(value){
           childs.css({
@@ -72,9 +73,9 @@
             changeValue(valueScreen);
             slideshow.attr('data-width',valueScreen);
           }
-        }else {
-          changeValue(100/countElement + '%');
-        }
+        }/*else {
+          changeValue(docWidth);
+        }*/
       });
       
     });
