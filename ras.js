@@ -157,10 +157,10 @@
         element.css({
           'width':valueScreen*childLength
         }).attr('data-width',valueScreen);
-        childs.css({
+        /*childs.css({
           'width':valueScreen,
           'position':'relative'
-        });
+        });*/
         this.heightElement(childs, element);
       }
     }

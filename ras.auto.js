@@ -7,7 +7,8 @@
     options : {
       time:2000,
       textPlay:'play',
-      textPause:'pause'
+      textPause:'pause',
+      duration:700
     }
   };
   
@@ -30,7 +31,7 @@
       };
       
       playFct = function() {
-        autoSlideShow = setInterval(function(){$.fn.ras.slide(slideshow, 'next', 400)}, options.time);
+        autoSlideShow = setInterval(function(){$.fn.ras.slide(slideshow, 'next', options.duration)}, options.time);
       };
       
       //Slide
