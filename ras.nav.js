@@ -27,10 +27,12 @@
         $('#navMultiple').prepend('<button data-slide="'+i+'">'+i+'</button>');
       }
       
+      $('#navMultiple').find('button:eq(0)').addClass('active');
+      
       $('#navMultiple').find('button').each(function(e){
         var slide = $(this).data('slide');
         $(this).click(function(){
-          $('#navMultiple').find('active').removeClass('active');       
+          $('#navMultiple').find('.active').removeClass('active');       
           $(this).addClass('active');
           var childSelected = container.children().eq(slide),
               leftContainer = childSelected.data('left');
