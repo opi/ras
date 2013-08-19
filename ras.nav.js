@@ -30,6 +30,8 @@
       $('#navMultiple').find('button').each(function(e){
         var slide = $(this).data('slide');
         $(this).click(function(){
+          $('#navMultiple').find('active').removeClass('active');       
+          $(this).addClass('active');
           var childSelected = container.children().eq(slide),
               leftContainer = childSelected.data('left');
           container.animate({
