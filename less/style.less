@@ -68,7 +68,7 @@ pre {
 }
 
 #navRAS {
-  button {
+  > button {
     .posA;
     top: 50%;
     margin-top: -1.5em;
@@ -114,3 +114,26 @@ pre {
 }
 
 .mt { margin-top: 1.5em; }
+
+#navMultiple {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  button {
+    text-indent: -9999px;
+    border: 0;
+    border-radius: 90px;
+    height: 1.5em;
+    width: 1.5em;
+    margin-left: 0.5em;
+    .bg(#2c3e50);
+    border: 2px solid #FFF;
+    cursor: pointer;
+    &.active, &:hover, &:focus {
+      .bg(#16A085);
+    }
+  }
+}

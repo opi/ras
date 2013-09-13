@@ -13,5 +13,9 @@ $.fn.ready(function(){
     textPrev:'‹',
     textNext:'›'  
   }).carousel();
+  $('#slideshowNav').ras({
+    textPrev:'‹',
+    textNext:'›'
+  }).nav();
 });
 

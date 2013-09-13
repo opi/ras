@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <title>RAS - Responsive Accessible Slider</title>
 <script src="http://code.jquery.com/jquery-1.4.4.min.js" type="text/javascript"></script>
-<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.js" type="text/javascript"></script>
-<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.auto.js" type="text/javascript"></script>
-<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.carousel.js" type="text/javascript"></script>
+<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.min.js" type="text/javascript"></script>
+<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.auto.min.js" type="text/javascript"></script>
+<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.carousel.min.js" type="text/javascript"></script>
+<script src="https://rawgithub.com/thomaslebeau/ras/master/ras.nav.min.js" type="text/javascript"></script>
 <script src="ready.js" type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet/less" type="text/css" href="less/style.less" />
@@ -52,7 +53,8 @@ $('#slideshow').ras({
       <li><img src="img/500chat2.jpg" alt="désolé c'est encore un chaton" /></li>
     </ul>
     <pre>&lt;script src="ras.min.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="ras-auto.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="ras.auto.min.js" type="text/javascript"&gt;&lt;/script&gt;
+>>>>>>> [add] maj page github
 &lt;script type="text/javascript"&gt;
   $.fn.ready(function(){
     $('#slideshow').ras().autoslide();
@@ -82,7 +84,7 @@ $('#slideshow').ras().autoslide({
       <li><img src="img/500chat5min.png" alt="image de chaton tout mignon" /></li>
     </ul>
     <pre>&lt;script src="ras.min.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="ras-auto.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="ras.carousel.min.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
   $.fn.ready(function(){
     $('#slideshow').ras().carousel();
@@ -97,6 +99,22 @@ $('#slideshow').ras().carousel({
 });
 </pre>
     </div> 
+    <h2 id="navigation">Ras Navigation</h2>
+     <div class="container-btn">
+      <a target="_blank" title="Nouvelle fenêtre : Code de Nav minifié" href="https://raw.github.com/thomaslebeau/ras/master/ras.nav.min.js">Téléchargez ras.nav.min.js</a>
+    </div>
+     <ul id="slideshowNav">
+      <li><img src="img/500.jpeg" alt="image de chaton tout mignon" /></li>
+      <li><img src="img/500chat.jpg" alt="une autre image de chaton tout mignon" /></li>
+      <li><img src="img/500chat2.jpg" alt="désolé c'est encore un chaton" /></li>
+    </ul>
+    <pre>&lt;script src="ras.nav.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $.fn.ready(function(){
+    $('#slideshow').ras().nav();
+  });
+&lt;/script&gt;</pre>
+    
     <div class="container-btn mt">
       <a target="_blank" title="Nouvelle fenêtre : Code de Responsive Accessible Slideshow minifié" href="https://raw.github.com/thomaslebeau/ras/master/ras.min.js">Téléchargez ras.min.js</a>
       <a target="_blank" title="Nouvelle fenêtre : Repo Github du plugin Responsive Accessible Slideshow" href="https://github.com/thomaslebeau/ras">Accéder au repo Github</a>
