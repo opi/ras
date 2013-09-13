@@ -16,14 +16,15 @@
           childs = container.children(),
           dataW = container.data('width'),
           numberChild = childs.length;
-      
+      container.addClass('navRas');
+      container.find('li:first-child').addClass('activeSlide');
       container.children().each(function(e){
         $(this).attr('data-left', dataW*e);
       });
       
       navigation.prepend('<div id="navMultiple"/>');
       
-      for(var i = numberChild-1; i>=0; i--) {
+      for(var i = numberChild; i>=1; i--) {
         $('#navMultiple').prepend('<button data-slide="'+i+'">'+i+'</button>');
       }
       
@@ -34,8 +35,11 @@
         $(this).click(function(){
           $('#navMultiple').find('.active').removeClass('active');       
           $(this).addClass('active');
-          var childSelected = container.children().eq(slide),
+          var childSelected = container.find('li:eq('+slide+')'),
               leftContainer = childSelected.data('left');
+          
+          container.find('.activeSlide').removeClass('activeSlide');
+          childSelected.addClass('activeSlide');
           container.animate({
             'margin-left': -leftContainer
           })
