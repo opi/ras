@@ -98,7 +98,7 @@
           $navRAS.find('.next').bind('click', function(){
             var time = options.duration,
                 anim = options.animation;
-                
+              
             self.slide($RASSlideshow, 'next', time, 'null');
           });
           
@@ -114,26 +114,84 @@
         var dataWidth = el.data('width'),
             elWidth = el.width(),
             firstSlide = el.children(':first'),
-            lastSlide = el.children(':last'); 
-              
-        // Prev Direction
-        if(direction == 'prev') {
-          el.children().css({'margin-left':0})
-          lastSlide.prependTo(el).css({
-            'margin-left': '-'+dataWidth+'px'
-          }).animate({
-            'margin-left': 0
-          }, duration);
+            lastSlide = el.children(':last'),
+            navMultiple = $('#navMultiple'); 
+        
+        function addClassNav() {
+          var navSelected = el.find('.activeSlide').data('slide');
+              navMultiple.find('.active').removeClass('active');
+              navMultiple.find('button:eq('+navSelected+')').addClass('active');
+        }
+        
+        if(el.hasClass('navRas')) {   
+          if(direction == 'prev') {
+            var prev = el.find('.activeSlide').prev(),
+                left = prev.data('left');
+            
+            if(prev.length == 0) {
+              el.animate({
+              'margin-left':'-'+lastSlide.data('left')
+              }, function(){
+                el.find('.activeSlide').removeClass('activeSlide');
+                lastSlide.addClass('activeSlide');
+                addClassNav();
+              });
+            }else {
+              el.animate({
+                'margin-left':'-'+left
+              }, function(){
+                el.find('.activeSlide').removeClass('activeSlide');
+                prev.addClass('activeSlide');
+                addClassNav();
+              });
+            }
+            
+          } else if(direction == 'next') {
+            var next = el.find('.activeSlide').next(),
+                left = next.data('left');
+            
+            if(next.length == 0) {
+              el.animate({
+              'margin-left':0
+              }, function(){
+                el.find('.activeSlide').removeClass('activeSlide');
+                firstSlide.addClass('activeSlide');
+                addClassNav();
+              });
+            }else {
+              el.animate({
+                'margin-left':'-'+left
+              }, function(){
+                el.find('.activeSlide').removeClass('activeSlide');
+                next.addClass('activeSlide');
+                addClassNav();
+              });
+            }
+          }
           
-        // Next Direction
-        } else if( direction == 'next') {
-          firstSlide
-            .animate({
-             'margin-left': '-'+dataWidth+'px'
-            }, duration, function(){
-              $(this).css({'margin-left':0}).appendTo(el);
-            })
-        }   
+        }else {
+          // Prev Direction
+          if(direction == 'prev') {
+            el.children().css({'margin-left':0})
+            lastSlide.prependTo(el).css({
+              'margin-left': '-'+dataWidth+'px'
+            }).animate({
+              'margin-left': 0
+            }, duration);
+            
+          // Next Direction
+          } else if( direction == 'next') {
+            firstSlide
+              .animate({
+               'margin-left': '-'+dataWidth+'px'
+              }, duration, function(){
+                $(this).css({'margin-left':0}).appendTo(el);
+                el.children().each(function(e){
+                  $(this).attr('data-left', dataWidth*e);
+                });
+              })
+          }
+        }
       },
       //heightElement Method
       heightElement: function(element, parentElement) {
