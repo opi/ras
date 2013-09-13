@@ -25,7 +25,7 @@
       navigation.prepend('<div id="navMultiple"/>');
       
       for(var i = numberChild; i>=1; i--) {
-        $('#navMultiple').prepend('<button data-slide="'+i+'">'+i+'</button>');
+        $('#navMultiple').prepend('<button data-slide="'+(i-1)+'">'+i+'</button>');
       }
       
       $('#navMultiple').find('button:eq(0)').addClass('active');
