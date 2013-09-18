@@ -59,16 +59,18 @@
               RASparent = elementRAS.parent(),
               WinWidth = $(window).width();
           
-          //put display inline block for childs
+          var docWidth = $elementParent.width(),
+              childsWidth = docWidth;
+          
           childs.css({
             'float':'left',
-            'position':'relative'
+            'position':'relative',
+            'width':docWidth
           }).each(function(e){
             $(this).attr('data-slide',e);
           });
           
-          var docWidth = $elementParent.width(),
-              childsWidth = docWidth;
+          
           //append Size element RAS   
           elementRAS.css({
               'width':childsWidth*childLength
