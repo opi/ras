@@ -22,19 +22,23 @@
       container.children().each(function(e){
         $(this).attr('data-left', dataW*e);
       });
-      
-      navigation.prepend('<div id="navMultiple"/>');
+
+      navigation.each(function(){
+        $(this).prepend('<div id="navMultiple"/>');
+      });
+
+      var navMultiple = navigation.find("#navMultiple");
       
       for(var i = numberChild; i>=1; i--) {
-        $('#navMultiple').prepend('<button data-slide="'+(i-1)+'">'+i+'</button>');
+        navMultiple.prepend('<button data-slide="'+(i-1)+'">'+i+'</button>');
       }
       
-      $('#navMultiple').find('button:eq(0)').addClass('active');
+      navMultiple.find('button:eq(0)').addClass('active');
       
-      $('#navMultiple').find('button').each(function(e){
+      navMultiple.find('button').each(function(e){
         var slide = $(this).data('slide');
         $(this).click(function(){
-          $('#navMultiple').find('.active').removeClass('active');       
+          navMultiple.find('.active').removeClass('active');       
           $(this).addClass('active');
           var childSelected = container.children().eq(slide),
               leftContainer = childSelected.data('left');
