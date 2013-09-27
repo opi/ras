@@ -36,9 +36,11 @@
         $(this).click(function(){
           $('#navMultiple').find('.active').removeClass('active');       
           $(this).addClass('active');
-          var childSelected = container.find('li:eq('+slide+')'),
+          var childSelected = container.children().eq(slide),
               leftContainer = childSelected.data('left');
           
+          console.log(childSelected);
+
           container.find('.activeSlide').removeClass('activeSlide');
           childSelected.addClass('activeSlide');
           container.animate({
