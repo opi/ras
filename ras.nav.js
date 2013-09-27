@@ -11,13 +11,14 @@
     
     options = $.extend({}, r.nav.options, options);
     return this.each(function(){
-      var container = $(this),
+      var self = this,
+          container = $(self),
           navigation = container.closest('.allRas').find('#navRAS'),
           childs = container.children(),
           dataW = container.data('width'),
           numberChild = childs.length;
       container.addClass('navRas');
-      container.find('li:first-child').addClass('activeSlide');
+      container.children().eq(0).addClass('activeSlide');
       container.children().each(function(e){
         $(this).attr('data-left', dataW*e);
       });
