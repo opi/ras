@@ -38,8 +38,6 @@
           $(this).addClass('active');
           var childSelected = container.children().eq(slide),
               leftContainer = childSelected.data('left');
-          
-          console.log(childSelected);
 
           container.find('.activeSlide').removeClass('activeSlide');
           childSelected.addClass('activeSlide');
