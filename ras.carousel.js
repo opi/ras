@@ -22,7 +22,6 @@
           oneVisible = options.oneVisible,
           elementRAS = $(self.element);
           
-      
       if(childsLength > countElement && !oneVisible){
         for(var i = 0; i < childs.length; i=i+countElement) {
           childs
@@ -37,6 +36,7 @@
         });
         
       }else{
+        slideshow.closest('.allRas').find('#navRAS').remove();
         var widthElement;
         ($(window).width() > 400 ? widthElement = docWidth/countElement : widthElement = $(window).width());
           
@@ -59,7 +59,7 @@
       
       $(window).resize(function(){
         var valueScreen = slideshow.closest('.allRas').width();
-        
+        console.log(valueScreen);
         function changeValue(value){
           childs.css({
             'width':value,
